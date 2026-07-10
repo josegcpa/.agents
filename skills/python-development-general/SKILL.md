@@ -8,7 +8,7 @@ Always read `python-development-general` skill before developing Python code.
 ## Instructions
 
 - Use `uv` to perform any and all package management. Always use `uv` commands and avoid at all costs editing `pyproject.toml` or `uv.lock`. Dependencies relating to formatting, linting and testing should be added as `--dev` dependencies
-- Type-hinting is obligatory and documentation should follow the Google style, with clear `Args:`, `Returns:` and `Raises:` (if necessary). Each argument in the documentation should be followed with the type and whether it is optional in parenthesis. The first `"""` should always be followed by a paragraph. Example:
+- Type-hinting is obligatory and documentation should follow the Google style, with clear `Args:`, `Returns:` and `Raises:` (if necessary). Each argument in the documentation should be followed with the type and whether it is optional in parenthesis. The first `"""` should always be followed by a paragraph. Type hinting should not use `typing` types which are usually available in Python (i.e. `list`, `dict`, `tuple`, etc). Example:
 ```
 def function(test: int, test_optional: int = 1) -> bool:
     """
