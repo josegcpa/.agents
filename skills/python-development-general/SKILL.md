@@ -32,7 +32,29 @@ def function(test: int, test_optional: int = 1) -> bool:
 - Working with `csv` or other separator-based data types should use the `csv` module for simple read/write operations. Use `pandas` for complex tabular manipulation, exploratory analysis, Excel, or `parquet` (`pyarrow` backend). For large/very large datasets (>100,000 rows), prefer `polars` with lazy loading.
 - When asked to implement a web platform, avoid high-level wrappers such as `streamlit`. For REST APIs, use `fastapi` (see the `python-development-rest-api` skill). For server-rendered or lightweight web apps, use `flask` (see the `python-development-flask` skill)
 - To perform operations checking for geometric properties/intersections/etc make use of `shapely` (`uv add shapely`)
-- Formatting will be performed using `black` with a line length of 80 (i.e. `black --line-length 80`) and linting will be performed using `ruff`. Before finishing any task, run `ruff check .`, `black --line-length 80 .`, and `pytest` (if tests exist) and fix all issues.
+- Formatting will be performed using `black` with a line length of 80 (i.e. `black --line-length 80`) and linting will be performed using `ruff`. Before finishing any task, run `ruff check .`, `black --line-length 80 .`, and `pytest` (if tests exist) and fix all issues. 
+- To reduce variability when formatting and linting, write these commands as a script using `uv tool` (i.e. `post-task.sh`) and execute that file in strict mode. No need to install any of these tools in the working `uv` environment.
+- Always create the following `pre-commit` configuration (`.pre-commit-config.yaml`) if none is available:
+```
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: check-yaml
+    -   id: check-added-large-files
+
+-   repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+    -   id: isort
+        args: [--profile, black, "--line-length", "80", --filter-files]
+
+-   repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+    -   id: black
+        args: ["--line-length", "80"]
+```
 - When developing CLIs always use `argparse`. If you are developing a complex CLI which might require multiple endpoints (i.e. `cli-name train`, `cli-name process`) use subparsers via `parser.add_subparsers`
 - Always include the hatchling build system, for example in `pyproject.toml`:
 ```
