@@ -3,6 +3,8 @@ name: python-development-general
 description: Contains opinionated general instructions and guidelines on how to develop software using Python.
 ---
 
+# Python development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

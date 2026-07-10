@@ -3,6 +3,8 @@ name: python-development-machine-learning
 description: Contains opinionated general instructions and guidelines on how to develop machine learning software using Python.
 ---
 
+# Python machine learning development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

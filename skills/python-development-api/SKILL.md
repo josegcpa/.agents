@@ -3,6 +3,8 @@ name: python-development-api
 description: Contains guidelines for designing and implementing Python package APIs.
 ---
 
+# Python API development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

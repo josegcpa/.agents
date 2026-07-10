@@ -3,6 +3,8 @@ name: python-development-flask
 description: Contains opinionated instructions for building server-rendered and lightweight web applications with Flask.
 ---
 
+# Python Flask development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

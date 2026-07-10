@@ -3,6 +3,8 @@ name: python-development-tests
 description: Contains instructions and guidelines on how to implement tests for Python code.
 ---
 
+# Python tests development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

@@ -3,6 +3,8 @@ name: python-development-rest-api
 description: Contains opinionated instructions for building REST APIs with FastAPI.
 ---
 
+# Python REST API development skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

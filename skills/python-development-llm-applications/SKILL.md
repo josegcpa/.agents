@@ -3,6 +3,8 @@ name: python-development-llm-applications
 description: Contains opinionated general instructions and guidelines on how to develop LLM applications using Python.
 ---
 
+# Python development for LLM applications skill
+
 Always read `python-development-general` skill before developing Python code.
 
 ## Instructions

@@ -3,7 +3,11 @@ name: python-development-for-medical-imaging
 description: Contains opinionated general instructions and guidelines on how to develop software using Python for medical imaging.
 ---
 
+# Python development for medical imaging skill
+
 Always read `python-development-general` skill before developing Python code.
+
+## Instructions
 
 ### Clinical imaging (radiology, nuclear medicine)
 
