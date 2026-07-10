@@ -1,11 +1,11 @@
 ---
-name: python-development-llm-applications
+name: python-llm-applications
 description: Contains opinionated general instructions and guidelines on how to develop LLM applications using Python.
 ---
 
 # Python development for LLM applications skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -15,3 +15,12 @@ Always read `python-development-general` skill before developing Python code.
 - Prefer local models for sensitive data; use external APIs only after confirming compliance/approval.
 - Trace and log LLM calls. Use LangSmith or an equivalent tracing tool to capture inputs, outputs, token usage, and latency.
 - Evaluate outputs systematically: define test cases, use deterministic metrics where possible, and supplement with LLM-as-a-judge only when human judgment is impractical.
+
+## When to Use This Skill
+
+Use `/python-llm-applications` when:
+- Building LLM-powered applications in Python
+- Creating chains, prompts, retrievers, or output parsers with LangChain
+- Using local models via `ollama` or external LLM APIs
+- Implementing RAG, tracing, or evaluation pipelines
+- The task centres on language models rather than traditional ML models

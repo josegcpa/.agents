@@ -1,11 +1,11 @@
 ---
-name: python-development-machine-learning
+name: python-machine-learning
 description: Contains opinionated general instructions and guidelines on how to develop machine learning software using Python.
 ---
 
 # Python machine learning development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -18,3 +18,12 @@ Always read `python-development-general` skill before developing Python code.
 - When developing neural networks, use `torch` for model development. Prefer mixed precision training (`torch.amp`) for large models and place tensors on the correct device explicitly.
 - When developing neural networks for radiology/nuclear medicine, use MONAI (`uv install monai`) for data loading, (pre-)processing and data augmentations (`monai.transforms`), and try to use `monai.networks` if they are available. If there is no pre-determined spacing default to the common one. If models are to be trained with more than on sequence, resampling should be performed to match the space of the first sequence. If you want to perform sliding window prediction, use MONAI's `monai.inferers.SlidingWindowInferer`
 - When developing neural networks for histopathology, use `torchvision` for data loading, (pre-)processing and data augmentations (`torchvision.transforms`), and for networks use `torchvision.models`.
+
+## When to Use This Skill
+
+Use `/python-machine-learning` when:
+- Building machine-learning models in Python
+- Training tabular models with scikit-learn or gradient boosting
+- Training neural networks with PyTorch or MONAI
+- Implementing cross-validation, evaluation, and reproducible experiments
+- Persisting, loading, or deploying trained models

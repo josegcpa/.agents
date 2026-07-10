@@ -1,11 +1,11 @@
 ---
-name: python-development-general
+name: python-general
 description: Contains opinionated general instructions and guidelines on how to develop software using Python.
 ---
 
 # Python development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -32,7 +32,7 @@ def function(test: int, test_optional: int = 1) -> bool:
 - Pin dependencies by keeping `uv.lock` up to date. Use compatible version constraints in `pyproject.toml` and avoid hand-editing the lock file; let `uv` manage it.
 - Never commit secrets or `.env` files. Load configuration via environment variables (e.g., `pydantic-settings` or `os.environ`) and validate required values at startup.
 - Working with `csv` or other separator-based data types should use the `csv` module for simple read/write operations. Use `pandas` for complex tabular manipulation, exploratory analysis, Excel, or `parquet` (`pyarrow` backend). For large/very large datasets (>100,000 rows), prefer `polars` with lazy loading.
-- When asked to implement a web platform, avoid high-level wrappers such as `streamlit`. For REST APIs, use `fastapi` (see the `python-development-rest-api` skill). For server-rendered or lightweight web apps, use `flask` (see the `python-development-flask` skill)
+- When asked to implement a web platform, avoid high-level wrappers such as `streamlit`. For REST APIs, use `fastapi` (see the `python-rest-api` skill). For server-rendered or lightweight web apps, use `flask` (see the `python-flask` skill)
 - To perform operations checking for geometric properties/intersections/etc make use of `shapely` (`uv add shapely`)
 - Formatting will be performed using `black` with a line length of 80 (i.e. `black --line-length 80`) and linting will be performed using `ruff`. Before finishing any task, run `ruff check .`, `black --line-length 80 .`, and `pytest` (if tests exist) and fix all issues. 
 - To reduce variability when formatting and linting, write these commands as a script using `uv tool` (i.e. `post-task.sh`) and execute that file in strict mode. No need to install any of these tools in the working `uv` environment.
@@ -65,4 +65,13 @@ requires = ["uv_build>=0.11.26,<0.12"]
 build-backend = "uv_build"
 ```
 - In-line comments/comments explaining code should be reduced to a minimum and for code bits which are genuinely hard to understand
-- Use test-driven development but be mindful of the tests you implement: implementing tests which are too specific is useless and will significantly reduce development speed. For more information read the `python-development-tests` skill
+- Use test-driven development but be mindful of the tests you implement: implementing tests which are too specific is useless and will significantly reduce development speed. For more information read the `python-tests` skill
+
+## When to Use This Skill
+
+Use `/python-general` when:
+- Writing or setting up any Python project
+- Managing dependencies and environments with `uv`
+- Applying formatting, linting, and type-hinting standards
+- Creating Python CLIs, scripts, or general-purpose packages
+- The task does not specifically require another Python skill

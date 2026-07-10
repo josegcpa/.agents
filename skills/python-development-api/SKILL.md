@@ -1,11 +1,11 @@
 ---
-name: python-development-api
+name: python-api
 description: Contains guidelines for designing and implementing Python package APIs.
 ---
 
 # Python API development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -20,3 +20,12 @@ Always read `python-development-general` skill before developing Python code.
 - Add type hints throughout the public interface. Run `mypy` or `pyright` on the package before finishing.
 - Make the package easy to test: keep side effects at the boundaries, inject dependencies, and avoid hidden global state.
 - Define a clear error hierarchy with descriptive exception classes that users can catch.
+
+## When to Use This Skill
+
+Use `/python-api` when:
+- Designing a public Python package API
+- Defining stable, reusable public interfaces
+- Planning versioning, backwards compatibility, and deprecation
+- Writing library documentation and type hints
+- Creating a Python package intended for others to import

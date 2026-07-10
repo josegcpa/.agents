@@ -1,11 +1,11 @@
 ---
-name: python-development-for-medical-imaging
+name: python-for-medical-imaging
 description: Contains opinionated general instructions and guidelines on how to develop software using Python for medical imaging.
 ---
 
 # Python development for medical imaging skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -24,3 +24,12 @@ Always read `python-development-general` skill before developing Python code.
 - When exporting predictions always use _at least_ GeoJSON unless otherwise specified
 - If requested, please also implement `SpatialData` data exports (see: https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/intro.html)
 - Never export patient identifiers alongside WSI annotations; ensure all exported metadata is de-identified.
+
+## When to Use This Skill
+
+Use `/python-for-medical-imaging` when:
+- Working with DICOM, NIfTI, NRRD, or MHA images
+- Processing radiology, nuclear medicine, or histopathology data
+- Anonymising or de-identifying medical imaging data
+- Resampling, windowing, or visualising clinical images
+- Exporting WSI annotations or spatial imaging results

@@ -75,3 +75,12 @@ jq -r '.[] | [.name, .email, .age] | @csv' data.json > output.csv
 ```bash
 python -c "import json, yaml; print(yaml.dump(json.load(open('data.json'))))"
 ```
+
+## When to Use This Skill
+
+Use `/json` when:
+- Parsing or querying JSON data
+- Validating JSON against a schema
+- Transforming, filtering, or restructuring JSON
+- Converting JSON to or from other formats
+- Working with jq or JSON APIs

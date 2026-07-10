@@ -1,11 +1,11 @@
 ---
-name: python-development-rest-api
+name: python-rest-api
 description: Contains opinionated instructions for building REST APIs with FastAPI.
 ---
 
 # Python REST API development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -21,3 +21,12 @@ Always read `python-development-general` skill before developing Python code.
 - Add structured logging for all requests.
 - To implement rate-limiting, always use `slowapi`. Please note that a `request: Request` should be implemented for the functions with rate-limiting
 - For API session handling, always use cookies if there is no user registration. If there is user registration, please use JWT tokens.
+
+## When to Use This Skill
+
+Use `/python-rest-api` when:
+- Building REST APIs with FastAPI
+- Defining Pydantic request/response models and OpenAPI metadata
+- Implementing dependency injection, authentication, or rate limiting
+- Writing async endpoints and structured API tests
+- Adding a machine-readable API to a Python project

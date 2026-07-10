@@ -1,11 +1,11 @@
 ---
-name: python-development-flask
+name: python-flask
 description: Contains opinionated instructions for building server-rendered and lightweight web applications with Flask.
 ---
 
 # Python Flask development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -23,3 +23,12 @@ Always read `python-development-general` skill before developing Python code.
 - Add a `/health` endpoint that returns a simple success payload and a request-logging middleware or `before_request`/`after_request` hooks for observability.
 - Use a production WSGI server such as `gunicorn` or `uwsgi` instead of the built-in development server. Run with `gunicorn -w 4 -b 0.0.0.0:8000 'app:create_app()'`.
 - Implement rate-limiting only if requested. If so, use `flask-limiter`
+
+## When to Use This Skill
+
+Use `/python-flask` when:
+- Building server-rendered or lightweight web applications
+- Using Flask and the application factory pattern
+- Organising routes with Blueprints and Jinja2 templates
+- Handling forms, CSRF protection, and user input validation
+- Adding a simple web interface to a Python project

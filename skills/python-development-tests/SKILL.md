@@ -1,11 +1,11 @@
 ---
-name: python-development-tests
+name: python-tests
 description: Contains instructions and guidelines on how to implement tests for Python code.
 ---
 
 # Python tests development skill
 
-Always read `python-development-general` skill before developing Python code.
+Always read `python-general` skill before developing Python code.
 
 ## Instructions
 
@@ -18,3 +18,12 @@ Always read `python-development-general` skill before developing Python code.
 - When asked to implement tests for DICOM images, make use of the `pydicom` test images (see: https://pydicom.github.io/pydicom/stable/reference/examples.html)
 - When asked to implement tests for nifti/nrrd/mha images, use the following `nibabel` test image: https://github.com/yarikoptic/nitest-balls1/raw/2cd07d86e2cc2d3c612d5d4d659daccd7a58f126/NIFTI/T2.nii.gz
 - When testing histopathology workflows, use https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1-Small-Region.svs as a test WSI
+
+## When to Use This Skill
+
+Use `/python-tests` when:
+- Writing tests for Python code
+- Setting up pytest fixtures and parameterised test cases
+- Testing resource-dependent code with conditional skips
+- Measuring meaningful coverage with `pytest-cov`
+- The task explicitly asks for tests or test infrastructure
