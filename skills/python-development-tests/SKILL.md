@@ -9,6 +9,7 @@ Always read `python-development-general` skill before developing Python code.
 
 - When asked to implement tests, use `pytest` and always use `pytest` fixtures to define common test data and configurations. Any data download should make use of a fixture which downloads the data to a temporary directory and cleans it up after the test
 - Prefer deterministic, synthetic test data when possible. Keep tests fast and isolated; if the slowness of a test becomes an impediment, use `pytest-mock`, but keep this to a minimum.
+- When testing applications which require GPU use/other resources which might be available across all machines (i.e. specific API accesses) do not mock these. Instead, skip these tests by checking for the availability of these resources
 - Use `pytest.mark.parametrize` for testing multiple inputs/edge cases against the same logic.
 - Use the `tmp_path` fixture for file output and ensure cleanup is automatic.
 - Measure coverage with `pytest-cov` and aim for meaningful coverage of critical paths rather than chasing a number.
