@@ -17,13 +17,48 @@ Always read `python-general` skill before developing Python code.
 - Validate images before processing: check spacing, origin, direction, and size are consistent; reject empty or zero-volume images and log the reason.
 - For CT, apply windowing/level transforms using the modality-specific units (HU) before visualisation or model input.
 - When resampling, match the reference spacing/origin/direction explicitly. When resampling mask data, always use `sitkLabelLinear`
+- When exporting Nifti images created from other Nifti images (i.e. segmentation masks) always copy the spacing, direction and origin information from the input to the output
+- When exporting DICOM-seg images, always use `pydicom-seg`. If the user did not provide a metadata file, generate one with a placeholder structure with the following format:
+```
+{
+  "ContentCreatorName": "Reader1",
+  "ClinicalTrialSeriesID": "Session1",
+  "ClinicalTrialTimePointID": "1",
+  "SeriesDescription": "Segmentation",
+  "SeriesNumber": "300",
+  "InstanceNumber": "1",
+  "BodyPartExamined": "BODY",
+  "segmentAttributes": [
+    [
+      {
+        "labelID": 1,
+        "SegmentDescription": "Segmentation",
+        "SegmentAlgorithmType": "SEMIAUTOMATIC",
+        "SegmentAlgorithmName": "<algorithm-name>",
+        "SegmentedPropertyCategoryCodeSequence": {
+          "CodeValue": "260787004",
+          "CodingSchemeDesignator": "SCT",
+          "CodeMeaning": "Physical object"
+        },
+        "SegmentedPropertyTypeCodeSequence": {
+          "CodeValue": "122485",
+          "CodingSchemeDesignator": "DCM",
+          "CodeMeaning": "Sphere"
+        }
+      }
+    ]
+  ],
+  "ContentLabel": "SEGMENTATION",
+  "ContentDescription": "Image segmentation",
+  "ClinicalTrialCoordinatingCenterName": "dcmqi"
+}
+```
 
 ### Histopathology
 
 - Always use openslide (`uv add openslide-python openslide-bin`) to read histopathology images
 - When exporting predictions always use _at least_ GeoJSON unless otherwise specified
 - If requested, please also implement `SpatialData` data exports (see: https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/intro.html)
-- Never export patient identifiers alongside WSI annotations; ensure all exported metadata is de-identified.
 
 ## When to Use This Skill
 
