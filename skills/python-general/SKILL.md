@@ -1,6 +1,6 @@
 ---
 name: python-general
-description: Contains opinionated general instructions and guidelines on how to develop software using Python.
+description: Important and general guidelines on how to develop software using Python.
 ---
 
 # Python development skill
